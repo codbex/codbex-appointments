@@ -1,0 +1,148 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "CODBEX_APPOINTMENT",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "APPOINTMENT_ID"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "APPOINTMENT_OPERATOR"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "APPOINTMENT_ASSIGEE"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "APPOINTMENT_APPOINTMENTSTATUS"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "APPOINTMENT_SALESORDER"
+                    },
+                    {
+                        "type": "DATE",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "APPOINTMENT_INTAKEDATE"
+                    },
+                    {
+                        "type": "DATE",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "APPOINTMENT_RELEASEDATE"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 755,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "APPOINTMENT_ISSUE"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "nullable": true,
+                        "name": "APPOINTMENT_CUSTOMER"
+                    }
+                ]
+            },
+            {
+                "name": "CODBEX_APPOINTMENTSTATUS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "APPOINTMENTSTATUS_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "APPOINTMENTSTATUS_NAME"
+                    }
+                ]
+            },
+            {
+                "name": "Appointment_Employee",
+                "type": "foreignKey",
+                "table": "CODBEX_APPOINTMENT",
+                "constraintName": "Appointment_Employee",
+                "columns": "APPOINTMENT_OPERATOR",
+                "referencedTable": "CODBEX_EMPLOYEE",
+                "referencedColumns": "EMPLOYEE_ID"
+            },
+            {
+                "name": "Appointment_Employee",
+                "type": "foreignKey",
+                "table": "CODBEX_APPOINTMENT",
+                "constraintName": "Appointment_Employee",
+                "columns": "APPOINTMENT_ASSIGEE",
+                "referencedTable": "CODBEX_EMPLOYEE",
+                "referencedColumns": "EMPLOYEE_ID"
+            },
+            {
+                "name": "Appointment_AppointmentStatus",
+                "type": "foreignKey",
+                "table": "CODBEX_APPOINTMENT",
+                "constraintName": "Appointment_AppointmentStatus",
+                "columns": "APPOINTMENT_APPOINTMENTSTATUS",
+                "referencedTable": "CODBEX_APPOINTMENTSTATUS",
+                "referencedColumns": "APPOINTMENTSTATUS_ID"
+            },
+            {
+                "name": "Appointment_SalesOrder",
+                "type": "foreignKey",
+                "table": "CODBEX_APPOINTMENT",
+                "constraintName": "Appointment_SalesOrder",
+                "columns": "APPOINTMENT_SALESORDER",
+                "referencedTable": "CODBEX_SALESORDER",
+                "referencedColumns": "SALESORDER_ID"
+            },
+            {
+                "name": "Appointment_Customer",
+                "type": "foreignKey",
+                "table": "CODBEX_APPOINTMENT",
+                "constraintName": "Appointment_Customer",
+                "columns": "APPOINTMENT_CUSTOMER",
+                "referencedTable": "CODBEX_CUSTOMER",
+                "referencedColumns": "CUSTOMER_ID"
+            }
+        ]
+    },
+    "datasource": "DefaultDB"
+}
