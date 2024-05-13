@@ -40,6 +40,8 @@
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "APPOINTMENT_SALESORDER"
                     },
@@ -70,6 +72,8 @@
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "APPOINTMENT_CUSTOMER"
                     }

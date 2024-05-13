@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/codbex-appointments/gen/api/Appointment/AppointmentService.ts";
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'entityApi', 'Extensions', function ($scope, messageHub, entityApi, Extensions) {
+	.controller('PageController', ['$scope', '$http', 'messageHub', 'entityApi', 'Extensions', function ($scope, $http, messageHub, entityApi, Extensions) {
 
 		$scope.dataPage = 1;
 		$scope.dataCount = 0;
@@ -117,12 +117,22 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Appointment-details", {
 				action: "select",
 				entity: entity,
+				optionsOperator: $scope.optionsOperator,
+				optionsAssigee: $scope.optionsAssigee,
+				optionsStatus: $scope.optionsStatus,
+				optionsSalesOrder: $scope.optionsSalesOrder,
+				optionsCustomer: $scope.optionsCustomer,
 			});
 		};
 
 		$scope.openFilter = function (entity) {
 			messageHub.showDialogWindow("Appointment-filter", {
 				entity: $scope.filterEntity,
+				optionsOperator: $scope.optionsOperator,
+				optionsAssigee: $scope.optionsAssigee,
+				optionsStatus: $scope.optionsStatus,
+				optionsSalesOrder: $scope.optionsSalesOrder,
+				optionsCustomer: $scope.optionsCustomer,
 			});
 		};
 
@@ -131,6 +141,11 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Appointment-details", {
 				action: "create",
 				entity: {},
+				optionsOperator: $scope.optionsOperator,
+				optionsAssigee: $scope.optionsAssigee,
+				optionsStatus: $scope.optionsStatus,
+				optionsSalesOrder: $scope.optionsSalesOrder,
+				optionsCustomer: $scope.optionsCustomer,
 			}, null, false);
 		};
 
@@ -138,6 +153,11 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Appointment-details", {
 				action: "update",
 				entity: entity,
+				optionsOperator: $scope.optionsOperator,
+				optionsAssigee: $scope.optionsAssigee,
+				optionsStatus: $scope.optionsStatus,
+				optionsSalesOrder: $scope.optionsSalesOrder,
+				optionsCustomer: $scope.optionsCustomer,
 			}, null, false);
 		};
 
@@ -169,5 +189,100 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		};
+
+		//----------------Dropdowns-----------------//
+		$scope.optionsOperator = [];
+		$scope.optionsAssigee = [];
+		$scope.optionsStatus = [];
+		$scope.optionsSalesOrder = [];
+		$scope.optionsCustomer = [];
+
+
+		$http.get("/services/ts/codbex-employees/gen/api/Employees/EmployeeService.ts").then(function (response) {
+			$scope.optionsOperator = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$http.get("/services/ts/codbex-employees/gen/api/Employees/EmployeeService.ts").then(function (response) {
+			$scope.optionsAssigee = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$http.get("/services/ts/codbex-appointments/gen/api/entities/AppointmentStatusService.ts").then(function (response) {
+			$scope.optionsStatus = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$http.get("/services/ts/codbex-orders/gen/api/SalesOrder/SalesOrderService.ts").then(function (response) {
+			$scope.optionsSalesOrder = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$http.get("/services/ts/codbex-partners/gen/api/Customers/CustomerService.ts").then(function (response) {
+			$scope.optionsCustomer = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$scope.optionsOperatorValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsOperator.length; i++) {
+				if ($scope.optionsOperator[i].value === optionKey) {
+					return $scope.optionsOperator[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsAssigeeValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsAssigee.length; i++) {
+				if ($scope.optionsAssigee[i].value === optionKey) {
+					return $scope.optionsAssigee[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsStatusValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsStatus.length; i++) {
+				if ($scope.optionsStatus[i].value === optionKey) {
+					return $scope.optionsStatus[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsSalesOrderValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsSalesOrder.length; i++) {
+				if ($scope.optionsSalesOrder[i].value === optionKey) {
+					return $scope.optionsSalesOrder[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsCustomerValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsCustomer.length; i++) {
+				if ($scope.optionsCustomer[i].value === optionKey) {
+					return $scope.optionsCustomer[i].text;
+				}
+			}
+			return null;
+		};
+		//----------------Dropdowns-----------------//
 
 	}]);

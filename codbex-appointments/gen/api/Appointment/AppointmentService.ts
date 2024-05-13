@@ -119,6 +119,18 @@ class AppointmentService {
     }
 
     private validateEntity(entity: any): void {
+        if (entity.Operator === null || entity.Operator === undefined) {
+            throw new ValidationError(`The 'Operator' property is required, provide a valid value`);
+        }
+        if (entity.Assigee === null || entity.Assigee === undefined) {
+            throw new ValidationError(`The 'Assigee' property is required, provide a valid value`);
+        }
+        if (entity.IntakeDate === null || entity.IntakeDate === undefined) {
+            throw new ValidationError(`The 'IntakeDate' property is required, provide a valid value`);
+        }
+        if (entity.ReleaseDate === null || entity.ReleaseDate === undefined) {
+            throw new ValidationError(`The 'ReleaseDate' property is required, provide a valid value`);
+        }
         if (entity.Issue?.length > 755) {
             throw new ValidationError(`The 'Issue' exceeds the maximum length of [755] characters`);
         }

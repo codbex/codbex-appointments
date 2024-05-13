@@ -817,6 +817,10 @@ components:
     Appointment:
       type: object
       required:
+        - Operator
+        - Assigee
+        - IntakeDate
+        - ReleaseDate
       properties:
         Id:
           type: integer
