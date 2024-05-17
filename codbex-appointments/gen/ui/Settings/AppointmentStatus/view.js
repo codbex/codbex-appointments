@@ -4,14 +4,16 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "AppointmentStatus-details",
+    id: "AppointmentStatus",
     label: "AppointmentStatus",
-    link: "/services/web/codbex-appointments/gen/ui/entities/AppointmentStatus/dialog-window/index.html",
-    perspectiveName: "entities",
+    factory: "frame",
+    region: "center",
+    link: "/services/web/codbex-appointments/gen/ui/Settings/AppointmentStatus/index.html",
+    perspectiveName: "Settings",
 };
 
 if (typeof exports !== 'undefined') {
-    exports.getDialogWindow = function () {
+    exports.getView = function () {
         return viewData;
     }
 }

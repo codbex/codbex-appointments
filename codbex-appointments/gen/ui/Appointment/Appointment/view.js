@@ -7,7 +7,7 @@ const viewData = {
     id: "Appointment",
     label: "Appointment",
     factory: "frame",
-    region: "center",
+    region: "left",
     link: "/services/web/codbex-appointments/gen/ui/Appointment/Appointment/index.html",
     perspectiveName: "Appointment",
 };

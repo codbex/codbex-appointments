@@ -5,13 +5,13 @@
  */
 exports.getTile = function () {
     return {
-        group: "Entities",
+        group: "Settings",
         name: "AppointmentStatus",
         caption: "Manage entity AppointmentStatus",
         tooltip: "AppointmentStatus",
         // icon: "file-o",
-        location: "/services/web/codbex-appointments/gen/ui/entities/index.html",
+        location: "/services/web/codbex-appointments/gen/ui/Settings/index.html",
         order: "100",
-        groupOrder: "100",
+        groupOrder: "590",
     };
 };

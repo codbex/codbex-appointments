@@ -1,9 +1,9 @@
 angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-appointments.entities.AppointmentStatus';
+		messageHubProvider.eventIdPrefix = 'codbex-appointments.Settings.AppointmentStatus';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/codbex-appointments/gen/api/entities/AppointmentStatusService.ts";
+		entityApiProvider.baseUrl = "/services/ts/codbex-appointments/gen/api/Settings/AppointmentStatusService.ts";
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'entityApi', 'Extensions', function ($scope, messageHub, entityApi, Extensions) {
 
@@ -13,8 +13,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//-----------------Custom Actions-------------------//
 		Extensions.get('dialogWindow', 'codbex-appointments-custom-action').then(function (response) {
-			$scope.pageActions = response.filter(e => e.perspective === "entities" && e.view === "AppointmentStatus" && (e.type === "page" || e.type === undefined));
-			$scope.entityActions = response.filter(e => e.perspective === "entities" && e.view === "AppointmentStatus" && e.type === "entity");
+			$scope.pageActions = response.filter(e => e.perspective === "Settings" && e.view === "AppointmentStatus" && (e.type === "page" || e.type === undefined));
+			$scope.entityActions = response.filter(e => e.perspective === "Settings" && e.view === "AppointmentStatus" && e.type === "entity");
 		});
 
 		$scope.triggerPageAction = function (action) {

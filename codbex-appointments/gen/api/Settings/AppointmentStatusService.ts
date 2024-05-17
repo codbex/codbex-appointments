@@ -1,10 +1,10 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
 import { Extensions } from "sdk/extensions"
-import { AppointmentStatusRepository, AppointmentStatusEntityOptions } from "../../dao/entities/AppointmentStatusRepository";
+import { AppointmentStatusRepository, AppointmentStatusEntityOptions } from "../../dao/Settings/AppointmentStatusRepository";
 import { ValidationError } from "../utils/ValidationError";
 import { HttpUtils } from "../utils/HttpUtils";
 
-const validationModules = await Extensions.loadExtensionModules("codbex-appointments-entities-AppointmentStatus", ["validate"]);
+const validationModules = await Extensions.loadExtensionModules("codbex-appointments-Settings-AppointmentStatus", ["validate"]);
 
 @Controller
 class AppointmentStatusService {
@@ -30,7 +30,7 @@ class AppointmentStatusService {
         try {
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/codbex-appointments/gen/api/entities/AppointmentStatusService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/codbex-appointments/gen/api/Settings/AppointmentStatusService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {

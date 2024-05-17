@@ -1,9 +1,9 @@
 angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-appointments.Appointment.Appointment';
+		messageHubProvider.eventIdPrefix = 'codbex-appointments.Settings.AppointmentStatus';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/codbex-appointments/gen/api/Appointment/AppointmentService.ts";
+		entityApiProvider.baseUrl = "/services/ts/codbex-appointments/gen/api/Settings/AppointmentStatusService.ts";
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', 'entityApi', function ($scope, messageHub, ViewParameters, entityApi) {
 
@@ -12,29 +12,18 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			details: {},
 		};
 		$scope.formHeaders = {
-			select: "Appointment Details",
-			create: "Create Appointment",
-			update: "Update Appointment"
+			select: "AppointmentStatus Details",
+			create: "Create AppointmentStatus",
+			update: "Update AppointmentStatus"
 		};
 		$scope.action = 'select';
 
 		let params = ViewParameters.get();
 		if (Object.keys(params).length) {
 			$scope.action = params.action;
-			if (params.entity.IntakeDate) {
-				params.entity.IntakeDate = new Date(params.entity.IntakeDate);
-			}
-			if (params.entity.ReleaseDate) {
-				params.entity.ReleaseDate = new Date(params.entity.ReleaseDate);
-			}
 			$scope.entity = params.entity;
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
-			$scope.optionsOperator = params.optionsOperator;
-			$scope.optionsAssigee = params.optionsAssigee;
-			$scope.optionsStatus = params.optionsStatus;
-			$scope.optionsSalesOrder = params.optionsSalesOrder;
-			$scope.optionsCustomer = params.optionsCustomer;
 		}
 
 		$scope.create = function () {
@@ -42,12 +31,12 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			entity[$scope.selectedMainEntityKey] = $scope.selectedMainEntityId;
 			entityApi.create(entity).then(function (response) {
 				if (response.status != 201) {
-					$scope.errorMessage = `Unable to create Appointment: '${response.message}'`;
+					$scope.errorMessage = `Unable to create AppointmentStatus: '${response.message}'`;
 					return;
 				}
 				messageHub.postMessage("entityCreated", response.data);
 				$scope.cancel();
-				messageHub.showAlertSuccess("Appointment", "Appointment successfully created");
+				messageHub.showAlertSuccess("AppointmentStatus", "AppointmentStatus successfully created");
 			});
 		};
 
@@ -57,19 +46,19 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			entity[$scope.selectedMainEntityKey] = $scope.selectedMainEntityId;
 			entityApi.update(id, entity).then(function (response) {
 				if (response.status != 200) {
-					$scope.errorMessage = `Unable to update Appointment: '${response.message}'`;
+					$scope.errorMessage = `Unable to update AppointmentStatus: '${response.message}'`;
 					return;
 				}
 				messageHub.postMessage("entityUpdated", response.data);
 				$scope.cancel();
-				messageHub.showAlertSuccess("Appointment", "Appointment successfully updated");
+				messageHub.showAlertSuccess("AppointmentStatus", "AppointmentStatus successfully updated");
 			});
 		};
 
 		$scope.cancel = function () {
 			$scope.entity = {};
 			$scope.action = 'select';
-			messageHub.closeDialogWindow("Appointment-details");
+			messageHub.closeDialogWindow("AppointmentStatus-details");
 		};
 
 		$scope.clearErrorMessage = function () {

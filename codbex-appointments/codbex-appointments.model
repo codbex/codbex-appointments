@@ -96,7 +96,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Appointment_AppointmentStatus",
                         "relationshipEntityName": "AppointmentStatus",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Settings",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -219,7 +219,7 @@
                 "feedPassword": "YWRtaW4=",
                 "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
-                "layoutType": "MANAGE",
+                "layoutType": "MANAGE_MASTER",
                 "menuIndex": "100",
                 "menuKey": "appointment",
                 "menuLabel": "Appointment",
@@ -974,6 +974,8 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}APPOINTMENTSTATUS\"",
                 "dataName": "APPOINTMENTSTATUS",
                 "dataQuery": "",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "icon": "/services/web/resources/unicons/file.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -981,14 +983,14 @@
                 "menuLabel": "AppointmentStatus",
                 "name": "AppointmentStatus",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/wrench.svg",
+                "perspectiveLabel": "Settings",
+                "perspectiveName": "Settings",
+                "perspectiveOrder": "590",
                 "perspectiveRole": "",
                 "title": "AppointmentStatus",
                 "tooltip": "AppointmentStatus",
-                "type": "PRIMARY"
+                "type": "SETTING"
             },
             {
                 "properties": [
@@ -1250,6 +1252,13 @@
                 "label": "Appointment",
                 "icon": "/services/web/resources/unicons/calender.svg",
                 "order": "100",
+                "role": {}
+            },
+            {
+                "name": "Settings",
+                "label": "Settings",
+                "icon": "/services/web/resources/unicons/wrench.svg",
+                "order": "590",
                 "role": {}
             }
         ],

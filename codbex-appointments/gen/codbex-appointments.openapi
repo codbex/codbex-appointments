@@ -10,7 +10,7 @@ servers:
   - url: /services/ts
 tags:
   - name: Appointment
-  - name: entities
+  - name: Settings
 paths:
   /codbex-appointments/gen/api/Appointment/AppointmentService.ts:
     get:
@@ -412,7 +412,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-appointments/gen/api/entities/AppointmentStatusService.ts:
+  /codbex-appointments/gen/api/Settings/AppointmentStatusService.ts:
     get:
       summary: List AppointmentStatus
       parameters:
@@ -433,7 +433,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -464,7 +464,7 @@ paths:
     post:
       summary: Create AppointmentStatus
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -496,7 +496,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-appointments/gen/api/entities/AppointmentStatusService.ts/{id}:
+  /codbex-appointments/gen/api/Settings/AppointmentStatusService.ts/{id}:
     get:
       summary: Get AppointmentStatus by Id
       parameters:
@@ -507,7 +507,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -545,7 +545,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -593,7 +593,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -615,11 +615,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-appointments/gen/api/entities/AppointmentStatusService.ts/count:
+  /codbex-appointments/gen/api/Settings/AppointmentStatusService.ts/count:
     get:
       summary: Count the number of AppointmentStatus
       tags:
-        - entities
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -643,7 +643,7 @@ paths:
     post:
       summary: Count the number of AppointmentStatus by AppointmentStatusFilterOptions
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:
@@ -725,11 +725,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-appointments/gen/api/entities/AppointmentStatusService.ts/search:
+  /codbex-appointments/gen/api/Settings/AppointmentStatusService.ts/search:
     post:
       summary: Search AppointmentStatus by AppointmentStatusFilterOptions
       tags:
-        - entities
+        - Settings
       requestBody:
         content:
           application/json:

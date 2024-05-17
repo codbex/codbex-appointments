@@ -176,7 +176,7 @@ export class AppointmentStatusRepository {
     }
 
     private async triggerEvent(data: AppointmentStatusEntityEvent) {
-        const triggerExtensions = await extensions.loadExtensionModules("codbex-appointments-entities-AppointmentStatus", ["trigger"]);
+        const triggerExtensions = await extensions.loadExtensionModules("codbex-appointments-Settings-AppointmentStatus", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {
                 triggerExtension.trigger(data);
@@ -184,6 +184,6 @@ export class AppointmentStatusRepository {
                 console.error(error);
             }            
         });
-        producer.topic("codbex-appointments-entities-AppointmentStatus").send(JSON.stringify(data));
+        producer.topic("codbex-appointments-Settings-AppointmentStatus").send(JSON.stringify(data));
     }
 }
