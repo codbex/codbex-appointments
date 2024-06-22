@@ -1,0 +1,35 @@
+name: Release - Module
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: Release Version
+        required: true
+        default: 1.0.0
+
+run-name: 'version set to ${{ inputs.release-version }} for release'
+
+jobs:
+  main:
+    uses: codbex/codbex-infra/.github/workflows/module-release.yaml@main
+    with:
+      packages: codbex-appointments,codbex-appointments-data
+      packages-build: codbex-appointments
+      release-version: ${{ inputs.release-version }}
+      release-content: |
+        ## codbex-appointments - ${{ inputs.release-version }}
+  
+        Appointments Management Module
+  
+        ## Installation
+  
+        ```
+        npm install @codbex/codbex-appointments@${{ inputs.release-version }}
+        npm install @codbex/codbex-appointments-data@${{ inputs.release-version }}
+        ```
+  
+        ## Access points:
+  
+        - [/services/web/codbex-appointments/gen/](http://localhost:80/services/web/codbex-appointments/gen/) - Admin Panel
+    secrets: inherit
