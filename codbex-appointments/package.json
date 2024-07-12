@@ -10,6 +10,6 @@
     },
     "dependencies": {
         "@codbex/codbex-orders": "0.1.0",
-        "@codbex/codbex-orders-data": "0.1.0"
+        "@codbex/codbex-orders-data": "0.2.0"
     }
 }
