@@ -1,0 +1,5 @@
+{
+    "module": "codbex-appointments/gen/codbex-appointments/ui/launchpad/Home/view.js",
+    "extensionPoint": "codbex-appointments-view",
+    "description": "codbex-appointments - Application View"
+}
