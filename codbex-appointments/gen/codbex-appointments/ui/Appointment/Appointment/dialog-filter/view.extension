@@ -1,0 +1,5 @@
+{
+    "module": "codbex-appointments/gen/codbex-appointments/ui/Appointment/Appointment/dialog-filter/view.js",
+    "extensionPoint": "codbex-appointments-dialog-window",
+    "description": "codbex-appointments - Application Dialog Window"
+}
