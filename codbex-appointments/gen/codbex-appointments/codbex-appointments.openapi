@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Appointment Managements Module - OpenAPI 3.0
+  title: Appointments Management Module - OpenAPI 3.0
   version: 1.0.0
-  description: Managing appointment data
+  description: Managing Appointments Data
 externalDocs:
   description: Find out more about Eclipse Dirigible
   url: https://dirigible.io

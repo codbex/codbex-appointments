@@ -2,15 +2,15 @@
   "tablePrefix": "CODBEX_",
   "brand": "codbex",
   "brandUrl": "https://www.codbex.com/",
-  "title": "Appointment Managements Module",
-  "description": "Managing appointment data",
-  "fileName": "codbex-appointments",
-  "dataSource": "DefaultDB",
-  "genFolderName": "codbex-appointments",
+  "title": "Appointments Management Module",
+  "description": "Managing Appointments Data",
   "projectName": "codbex-appointments",
   "workspaceName": "workspace",
   "filePath": "codbex-appointments.model",
   "templateId": "template-application-angular/template/template.js",
+  "fileName": "codbex-appointments",
+  "genFolderName": "codbex-appointments",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Appointment": {
       "views": [
