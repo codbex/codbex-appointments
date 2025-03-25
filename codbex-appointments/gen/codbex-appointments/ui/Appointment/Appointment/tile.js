@@ -10,10 +10,10 @@ exports.getTile = function () {
         caption: "Manage entity Appointment",
         tooltip: "Appointment",
         type: "PRIMARY",
-        report: "${generateReport}",
+        report: "false",
         icon: "/services/web/resources/unicons/file.svg",
         location: "/services/web/codbex-appointments/gen/codbex-appointments/ui/Appointment/index.html",
         order: "100",
-        groupOrder: "100",
+        groupOrder: "100"
     };
-};
+}

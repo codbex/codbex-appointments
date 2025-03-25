@@ -7,7 +7,6 @@
                 "columns": [
                     {
                         "type": "INTEGER",
-                        "length": 0,
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
@@ -15,37 +14,31 @@
                     },
                     {
                         "type": "INTEGER",
-                        "length": 0,
                         "nullable": true,
                         "name": "APPOINTMENT_OPERATOR"
                     },
                     {
                         "type": "INTEGER",
-                        "length": 0,
                         "nullable": true,
                         "name": "APPOINTMENT_ASSIGEE"
                     },
                     {
                         "type": "INTEGER",
-                        "length": 0,
                         "nullable": true,
                         "name": "APPOINTMENT_APPOINTMENTSTATUS"
                     },
                     {
                         "type": "INTEGER",
-                        "length": 0,
                         "nullable": true,
                         "name": "APPOINTMENT_SALESORDER"
                     },
                     {
                         "type": "DATE",
-                        "length": 20,
                         "nullable": true,
                         "name": "APPOINTMENT_INTAKEDATE"
                     },
                     {
                         "type": "DATE",
-                        "length": 20,
                         "nullable": true,
                         "name": "APPOINTMENT_RELEASEDATE"
                     },
@@ -57,7 +50,6 @@
                     },
                     {
                         "type": "INTEGER",
-                        "length": 0,
                         "nullable": true,
                         "name": "APPOINTMENT_CUSTOMER"
                     }
@@ -69,7 +61,6 @@
                 "columns": [
                     {
                         "type": "INTEGER",
-                        "length": 0,
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,

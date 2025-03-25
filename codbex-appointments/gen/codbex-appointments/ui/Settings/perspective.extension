@@ -1,1 +1,5 @@
-{"module":"codbex-appointments/gen/codbex-appointments/ui/Settings/perspective.js","extensionPoint":"codbex-appointments","description":"codbex-appointments - Perspective - Settings"}
+{
+    "module": "codbex-appointments/gen/codbex-appointments/ui/Settings/perspective.js",
+    "extensionPoint": "codbex-appointments",
+    "description": "codbex-appointments - Perspective - Settings"
+}

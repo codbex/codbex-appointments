@@ -1,1 +1,6 @@
-{"module":"codbex-appointments/gen/codbex-appointments/ui/Appointment/Appointment/main-details/view.js","extensionPoint":"codbex-appointments-view","description":"codbex-appointments - Application View - Main Details"}
+{
+    "module": "codbex-appointments/gen/codbex-appointments/ui/Appointment/Appointment/main-details/view.js",
+    "extensionPoint": "codbex-appointments-view",
+    "description": "codbex-appointments - Application View - Main Details",
+    "role": "codbex-appointments.Appointment.AppointmentReadOnly,codbex-appointments.Appointment.AppointmentFullAccess"
+}

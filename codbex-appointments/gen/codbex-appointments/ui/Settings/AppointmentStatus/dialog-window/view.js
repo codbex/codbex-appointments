@@ -7,7 +7,7 @@ const viewData = {
     id: "AppointmentStatus-details",
     label: "AppointmentStatus",
     link: "/services/web/codbex-appointments/gen/codbex-appointments/ui/Settings/AppointmentStatus/dialog-window/index.html",
-    perspectiveName: "Settings",
+    perspectiveName: "Settings"
 };
 
 if (typeof exports !== 'undefined') {

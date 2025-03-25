@@ -7,7 +7,7 @@ const viewData = {
     id: "AppointmentStatus-filter",
     label: "AppointmentStatus Filter",
     link: "/services/web/codbex-appointments/gen/codbex-appointments/ui/Settings/AppointmentStatus/dialog-filter/index.html",
-    perspectiveName: "Settings",
+    perspectiveName: "Settings"
 };
 
 if (typeof exports !== 'undefined') {
