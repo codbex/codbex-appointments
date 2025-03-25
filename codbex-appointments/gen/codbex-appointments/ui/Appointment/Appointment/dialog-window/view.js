@@ -6,14 +6,15 @@
 const viewData = {
     id: "Appointment-details",
     label: "Appointment",
-    factory: "frame",
-    region: "center",
-    link: "/services/web/codbex-appointments/gen/ui/Appointment/Appointment/main-details/index.html",
+    link: "/services/web/codbex-appointments/gen/codbex-appointments/ui/Appointment/Appointment/dialog-window/index.html",
     perspectiveName: "Appointment",
+    roles: [
+        "codbex-appointments.Appointment.AppointmentReadOnly",
+    ]
 };
 
 if (typeof exports !== 'undefined') {
-    exports.getView = function () {
+    exports.getDialogWindow = function () {
         return viewData;
     }
 }

@@ -7,8 +7,8 @@ const perspectiveData = {
 	id: 'Appointment',
 	name: 'Appointment',
 	link: '/services/web/codbex-appointments/gen/codbex-appointments/ui/Appointment/index.html',
-	order: 100,
-	icon: '/services/web/resources/unicons/calender.svg',
+	order: '100',
+	icon: '/services/web/resources/unicons/calender.svg'
 };
 
 if (typeof exports !== 'undefined') {

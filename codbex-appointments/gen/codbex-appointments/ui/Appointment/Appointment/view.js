@@ -9,7 +9,7 @@ const viewData = {
     factory: "frame",
     region: "left",
     link: "/services/web/codbex-appointments/gen/codbex-appointments/ui/Appointment/Appointment/index.html",
-    perspectiveName: "Appointment",
+    perspectiveName: "Appointment"
 };
 
 if (typeof exports !== 'undefined') {

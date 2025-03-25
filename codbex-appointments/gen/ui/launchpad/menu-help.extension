@@ -1,5 +1,0 @@
-{
-    "module": "codbex-appointments/gen/ui/launchpad/menu-help.js",
-    "extensionPoint": "codbex-appointments-menu",
-    "description": "codbex-appointments - Application Menu"
-}
